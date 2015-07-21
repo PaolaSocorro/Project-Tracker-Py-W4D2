@@ -74,6 +74,7 @@ def assign_grade(github, title, grade):
     db_connection.commit()
     print "Successfully added %s\'s %s Project with a grade of %s" % (github,title,grade)
 
+
 def handle_input():
     """Main loop.
 
@@ -95,6 +96,7 @@ def handle_input():
         elif command == "new_student":
             first_name, last_name, github = args   # unpack!
             make_new_student(first_name, last_name, github)
+
         elif command == "project_title":
             title = args[0]
             get_project_by_title(title)
@@ -102,6 +104,7 @@ def handle_input():
         elif command == "grade":
             github, title = args
             get_grade_by_github_title(github, title)
+
         elif command == "add_grade":
             github,title,grade = args
             assign_grade(github, title, grade)
